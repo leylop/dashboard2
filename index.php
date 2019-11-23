@@ -4,79 +4,10 @@
         <meta charset="UTF-8">
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/chartJS/Chart.min.js"></script>
+        <link rel="stylesheet" href="CSS/estilos.css">
     </head>
-    <style>
-        .caja{
-            
-            max-width: 250px;
-            padding: 10px;
-            border: 1px solid #BDBDBD;
-        }
-        .caja select{
-            width: 100%;
-            font-size: 16px;
-            padding: 5px;
-        }
-        .resultados{
-            margin: 40px ;             
-            width: 450px;
-        }
-        .responsive-banner {
-            margin: 40px auto;          
-            width: 1400px;            
-            height: 100;           
-            position: relative;
-            height: auto;
-            min-height: 100px;
-            max-height: 200px;
-            border-radius: 5px;
-            overflow: hidden;
-            background-image: linear-gradient(to bottom right, #415AC6, #A784E0);
-}
-        .container-envelope {
-            padding: 35px 15px;
-            color: #fff;
-            width: 330%;
-        }
-        img {
-            max-width : 300px;
-            width: 80%;
-            position: relative;
-        }
-        span:after,
-        span:before {
-            content: "";
-            position: absolute;
-            display: block;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.1);
-            width: 50px;
-            height: 50px;
-        }
-        .circle-a:before {
-            width: 500px;
-            height: 500px;
-            top: -300px; left: 52%;
-            -webkit-transform: translate(-50%,0);
-            -ms-transform: translate(-50%,0);
-            transform: translate(-50%,0);
-        }
-        .circle-a:after {
-            top: 160px;
-            right: 10%;
-        }
-        .circle-b:before {
-            top: 60%;
-            left: -25px;
-        }
-        .circle-b:after {
-            width: 600px;
-            height: 150px;
-            bottom: -70px;
-            right: -70px;
-        }
-    </style>
-    <body> 
+    
+<body> 
     <aside class="responsive-banner">
     
 	<span class="circle-a"></span>
@@ -145,10 +76,12 @@
             </select>
         </div>
      <div>   
-        <div class="resultados" style= "width: 450px;height: 225px; padding-top: 40px;"><canvas id="grafico"></canvas></div>
+        <div class="resultados" style= "width: 450px;height: 225px; padding-top: 40px;">
+        <canvas id="grafico"></canvas></div>
     </body>
     <script>
             $(document).ready(mostrarResultados(2019));  
+
                 function mostrarResultados(year){
                     $('.resultados').html('<canvas id="grafico"></canvas>');
                     $.ajax({
