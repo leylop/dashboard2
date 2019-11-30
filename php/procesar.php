@@ -30,10 +30,7 @@
 		$otros= mysqli_query($var, "SELECT count(nombre) as total FROM `estudiantes`es
 				inner join tipo_pago b on es.id_TipoPago= b.id_TipoPago 
 				where es.id_entidad = 3 and  b.id_TipoPago= '$tipo_pago' LIMIT 1");
-	    
-	/*$query1 = mysqli_query($aVar, "SELECT name1 FROM users
-		ORDER BY RAND()
-		LIMIT 1");*/
+	
 	$total1 = mysqli_fetch_assoc($coop);
 	$data1 = $total1['total'];
 	$total2 = mysqli_fetch_assoc($icet);

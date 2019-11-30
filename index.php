@@ -20,7 +20,7 @@
         
         <div style="width:900px; padding:3px;">
         
-        <div class="caja" style="width:200px; background:#11226D; float:left;"> Tipo de Pago
+        <div class="caja" style="width:200px; background:#11226D; float:left;"><b> Tipo de Pago <b>
 
             <select onChange="mostrarResultados(this.value);">
                 <?php
@@ -35,8 +35,8 @@
             </select>
         </div>
 
-        <div class="caja" style="width:200px; background:#11226D; float:left;">
-            <select onChange="mostrarResultados(this.value);">
+        <div class="caja" style="width:200px; background:#11226D; float:left;"><b> Periodo <b>
+            <select onChange="">
                 <?php
                     for($i=2000;$i<2020;$i++){
                         if($i == 2019){
@@ -49,11 +49,11 @@
             </select>
         </div>
 
-        <div class="caja" style="width:200px; background:#11226D; float:right;">
-            <select onChange="mostrarResultados(this.value);">
+        <div class="caja" style="width:200px; background:#11226D; float:right;"><b>Semestre<b>
+            <select onChange="">
                 <?php
-                    for($i=2000;$i<2020;$i++){
-                        if($i == 2019){
+                    for($i=1;$i<11; $i++){
+                        if($i == 11){
                             echo '<option value="'.$i.'" selected>'.$i.'</option>';
                         }else{
                             echo '<option value="'.$i.'">'.$i.'</option>';
@@ -63,7 +63,7 @@
             </select>
         </div>
     
-      <div class="caja" style="width:200px; background:#11226D; float:right;">
+      <div class="caja" style="width:200px; background:#11226D; float:right;"><b>Entidad financiera<b>
             <select>
                 <?php
                     echo '<option value="1" selected> Cooperativa Minuto de Dios</option>';
@@ -92,10 +92,10 @@
 
                             var valores = eval(data);
 
-                           /* var c = valores[0];
+                          /*  var c = valores[0];
                             var i = valores[1];
-                            var o = valores[2];
-                            alert(o);*/
+                            var o = valores[2];*/
+                            
                             var c =50;
                             var i= 10;
                             var o= 100;
