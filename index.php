@@ -106,8 +106,13 @@
                             window.Barra = new Chart(contexto).Bar(Datos, { responsive : true });
                             Barra.clear();
                         }
+
+                        
                     });
                     return false;
                 }
+                
+            
+            
     </script>
 </html>
