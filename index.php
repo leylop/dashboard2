@@ -20,16 +20,17 @@
         
         <div style="width:900px; padding:3px;">
         
-        <div class="caja" style="width:200px; background:#11226D; float:left;">
+        <div class="caja" style="width:200px; background:#11226D; float:left;"> Tipo de Pago
+
             <select onChange="mostrarResultados(this.value);">
                 <?php
-                    for($i=2000;$i<2020;$i++){
-                        if($i == 2019){
-                            echo '<option value="'.$i.'" selected>'.$i.'</option>';
-                        }else{
-                            echo '<option value="'.$i.'">'.$i.'</option>';
-                        }
-                    }
+                
+                echo '<option value="1" selected> Crédito</option>';
+                echo '<option value="2" >Contado/ otros</option>';                
+                   
+                        
+                    
+                
                 ?>
             </select>
         </div>
@@ -62,16 +63,14 @@
             </select>
         </div>
     
-        <div class="caja" style="width:200px; background:#11226D; float:right;">
-            <select onChange="mostrarResultados(this.value);">
+      <div class="caja" style="width:200px; background:#11226D; float:right;">
+            <select>
                 <?php
-                    for($i=2000;$i<2020;$i++){
-                        if($i == 2019){
-                            echo '<option value="'.$i.'" selected>'.$i.'</option>';
-                        }else{
-                            echo '<option value="'.$i.'">'.$i.'</option>';
-                        }
-                    }
+                    echo '<option value="1" selected> Cooperativa Minuto de Dios</option>';
+                    echo '<option value="2" >Icetex</option>';
+                    echo '<option value="3" >Otros</option>';
+                        
+                    
                 ?>
             </select>
         </div>
@@ -80,25 +79,37 @@
         <canvas id="grafico"></canvas></div>
     </body>
     <script>
-            $(document).ready(mostrarResultados(2019));  
+            $(document).ready(mostrarResultados());  
 
-                function mostrarResultados(year){
+                function mostrarResultados(tipo_pago){
                     $('.resultados').html('<canvas id="grafico"></canvas>');
                     $.ajax({
                         type: 'POST',
                         url: 'php/procesar.php',
-                        data: 'year='+year,
+                        data: 'tipo_pago='+tipo_pago,
                         dataType: 'JSON',
-                        success:function(response){
+                        success:function(data){
+
+                            var valores = eval(data);
+
+                           /* var c = valores[0];
+                            var i = valores[1];
+                            var o = valores[2];
+                            alert(o);*/
+                            var c =50;
+                            var i= 10;
+                            var o= 100;
+                           
+
                             var Datos = {
-                                    labels : ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO'],
+                                    labels : ['Cooperativa Uniminuto', 'Icetex', 'Otros'],
                                     datasets : [
                                         {
                                             fillColor : 'rgba(91,228,146,0.6)', //COLOR DE LAS BARRAS
                                             strokeColor : 'rgba(57,194,112,0.7)', //COLOR DEL BORDE DE LAS BARRAS
                                             highlightFill : 'rgba(73,206,180,0.6)', //COLOR "HOVER" DE LAS BARRAS
                                             highlightStroke : 'rgba(66,196,157,0.7)', //COLOR "HOVER" DEL BORDE DE LAS BARRAS
-                                            data : ['5555', '3232', '34234', '23424', '5634']
+                                           data : [c, i, o]
                                         }
                                     ]
                                 }
