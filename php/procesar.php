@@ -40,11 +40,11 @@
     
 	
      $data= array( 0=>$data1,
-				   1=> $data2,
+				   1=>$data2,
 				   3=>$data3
 						);
-
-		//var_dump($data);
+      
+	
 
 		
 

@@ -92,9 +92,10 @@
 
                             var valores = eval(data);
 
-                          /*  var c = valores[0];
+                           /* var c = valores[0];
                             var i = valores[1];
                             var o = valores[2];*/
+                            
                             
                             var c =50;
                             var i= 10;
